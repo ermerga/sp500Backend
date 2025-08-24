@@ -40,7 +40,7 @@ def preprocess_data(sp500):
     del sp500["Stock Splits"]
     sp500["Tomorrow"] = sp500["Close"].shift(-1)
     sp500["Target"] = (sp500["Tomorrow"] > sp500["Close"]).astype(int)
-    sp500 = sp500.loc["1990-01-01":].copy()
+    sp500 = sp500.loc["2010-01-01":].copy()
     
     horizons = [2, 5, 60, 250, 1000]
     new_predictors = []
