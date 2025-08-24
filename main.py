@@ -8,7 +8,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["https://ermerga.github.io"])
+CORS(app, resources={r"/*": {"origins": "https://ermerga.github.io"}})
 
 
 # Function to load or fetch S&P 500 data
